@@ -1,9 +1,16 @@
-// DESCRIPTION: Write a function that returns only the decimal part of the given number.
+// DESCRIPTION: Write a function that takes a string and outputs
+//a strings of 1's and 0's where vowels become 1's and non-vowels become 0's.
 
-// You only have to handle valid numbers, not Infinity, NaN, or similar. 
-// Always return a positive decimal part.
+//All non-vowels including non alpha characters (spaces,commas etc.)
+//should be included.
+
+// Examples:
+
+//vowelOne( "abceios" ) // "1001110"
+
+//vowelOne( "aeiou, abc" ) // "1111100100"
 
 // SOLUTION:
-function getDecimal(n) {
-	return Math.abs(n%1);
-}
+function vowelOne(s){
+	return s.replace(/./g,v=>/[aeiou]/i.test(v)?'1':'0') // ...
+   }
